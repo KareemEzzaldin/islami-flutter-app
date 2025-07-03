@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_ap/ahadeth_details/AhadethDetailsScreen.dart';
 import 'package:islami_ap/home/Hadith.dart';
 
 class Ahadtehtab extends StatefulWidget {
@@ -32,11 +33,16 @@ class _AhadtehtabState extends State<Ahadtehtab> {
         Expanded(
           flex: 2,
           child: ListView.separated(
-              itemBuilder: (context, index) => Text(ahadithList[index].title,
-                textAlign: TextAlign.center ,
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400
+              itemBuilder: (context, index) => InkWell(
+                onTap: (){
+                  Navigator.of(context).pushNamed(AhadethDetailsScreen.routeName, arguments: ahadithList[index]);
+                },
+                child: Text(ahadithList[index].title,
+                  textAlign: TextAlign.center ,
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400
+                  ),
                 ),
               ),
               separatorBuilder: (context, index) => SizedBox(height: 10,),
