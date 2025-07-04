@@ -5,8 +5,24 @@ class Sebhatab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return Center(
+      child: Column(
+        // mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset("assets/images/body of seb7a.png", height: 234, width: 232,),
+          SizedBox(height: 20),
+          Text("عدد التسبيحات", style: TextStyle(fontSize: 25),),
+          SizedBox(height: 20,),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 25,vertical: 30),
+            margin: EdgeInsets.symmetric(horizontal: 170),
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.circular(20)
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
