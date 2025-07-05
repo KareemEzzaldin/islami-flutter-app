@@ -144,21 +144,21 @@ class QuranTab extends StatelessWidget {
           children: [
             Expanded(
                 child: Text(
-                  "اسم السورة",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  "Surah Name",
+                  style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,)
             ),
             Container(
               height: 40,
               width: 2,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary
+                color: Theme.of(context).colorScheme.onPrimaryContainer
               ),
             ),
             Expanded(
                 child: Text(
-                  "عدد الايات",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  "Verses Number",
+                  style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 )
             ),

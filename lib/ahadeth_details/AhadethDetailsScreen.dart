@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_ap/home/Hadith.dart';
 
+import '../style/AppStyle.dart';
+
 class AhadethDetailsScreen extends StatelessWidget {
   static const String routeName = "AhadethDetailsScreen";
   const AhadethDetailsScreen({super.key});
@@ -11,7 +13,9 @@ class AhadethDetailsScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/background.png'),
+              image: AssetImage(AppStyle.isDark
+                  ?"assets/images/home_dark_background.png"
+                  :'assets/images/background.png'),
               fit: BoxFit.fill
           )
       ),
@@ -23,7 +27,7 @@ class AhadethDetailsScreen extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                    child: SingleChildScrollView(child: Text(args.Content, style: TextStyle(fontSize: 25),))
+                    child: SingleChildScrollView(child: Text(args.Content, style: Theme.of(context).textTheme.displayMedium,))
                 ),
               ],
             ),
