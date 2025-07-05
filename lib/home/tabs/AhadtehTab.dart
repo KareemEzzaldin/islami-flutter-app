@@ -24,10 +24,7 @@ class _AhadtehtabState extends State<Ahadtehtab> {
         Expanded(child: Image.asset("assets/images/hadith_header.png")),
         Divider(),
         Text("Ahadeth",
-        style: TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.w600,
-        ),
+        style: Theme.of(context).textTheme.titleMedium,
         ),
         Divider(),
         Expanded(
@@ -39,10 +36,7 @@ class _AhadtehtabState extends State<Ahadtehtab> {
                 },
                 child: Text(ahadithList[index].title,
                   textAlign: TextAlign.center ,
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               separatorBuilder: (context, index) => SizedBox(height: 10,),
