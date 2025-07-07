@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:islami_ap/home/LanguageBottomSheet.dart';
 import 'package:islami_ap/home/ThemeBottomSheet.dart';
+import 'package:islami_ap/l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/SettingsProvider.dart';
 
 class Setteingstab extends StatelessWidget {
   const Setteingstab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 30,),
-          Text("Language", style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.language, style: Theme.of(context).textTheme.titleMedium),
           SizedBox(height: 10,),
           GestureDetector(
             onTap: () {
@@ -29,7 +34,9 @@ class Setteingstab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10)
               ),
               child: Text(
-                "English",
+                settingsProvider.language == "ar"
+                    ?"العربية"
+                    :"English",
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   fontSize: 18  ,
                 ),
@@ -37,7 +44,7 @@ class Setteingstab extends StatelessWidget {
             ),
           ),
           SizedBox(height: 50,),
-          Text("Theme", style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.theme, style: Theme.of(context).textTheme.titleMedium),
           SizedBox(height: 10,),
           GestureDetector(
             onTap: () {
@@ -53,7 +60,9 @@ class Setteingstab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)
               ),
               child: Text(
-                "Dark",
+                settingsProvider.themeMode == ThemeMode.dark
+                    ?"Dark"
+                    :"Light",
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   fontSize: 18,
                 ),
