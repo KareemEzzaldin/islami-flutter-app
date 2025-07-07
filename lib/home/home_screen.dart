@@ -5,7 +5,9 @@ import 'package:islami_ap/home/tabs/RadioTab.dart';
 import 'package:islami_ap/home/tabs/SebhaTab.dart';
 import 'package:islami_ap/l10n/app_localizations.dart';
 import 'package:islami_ap/home/tabs/SetteingsTab.dart';
+import 'package:provider/provider.dart';
 
+import '../providers/SettingsProvider.dart';
 import '../style/AppStyle.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,10 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AppStyle.isDark
+          image: AssetImage(settingsProvider.themeMode==ThemeMode.dark
               ?"assets/images/home_dark_background.png"
               :'assets/images/background.png'),
           fit:BoxFit.fill

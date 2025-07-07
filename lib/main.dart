@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:islami_ap/ahadeth_details/AhadethDetailsScreen.dart';
 import 'package:islami_ap/home/home_screen.dart';
+import 'package:islami_ap/providers/SettingsProvider.dart';
 import 'package:islami_ap/quran_details/QuranDetailsScreen.dart';
 import 'package:islami_ap/style/AppStyle.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 
 import 'l10n/app_localizations.dart';
 
 void main() {
-  runApp(const MyApp());
+  // new version
+  runApp(ChangeNotifierProvider(
+    create: (context) => SettingsProvider() ,
+      child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +24,12 @@ class MyApp extends StatelessWidget {
   //comment
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
+      title: 'Flutter Demo',
+      theme: AppStyle.lightTheme,
+      darkTheme: AppStyle.DarkTheme,
+      themeMode: settingsProvider.themeMode,
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -29,13 +40,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // Spanish
       ],
-      locale: Locale('ar'),
-      title: 'Flutter Demo',
-      theme: AppStyle.lightTheme,
-      darkTheme: AppStyle.DarkTheme,
-      themeMode: AppStyle.isDark
-          ?ThemeMode.dark
-          :ThemeMode.light,
+      locale: Locale(settingsProvider.language),
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName:(_)=>HomeScreen(),
