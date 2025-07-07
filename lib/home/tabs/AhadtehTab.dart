@@ -23,21 +23,18 @@ class _AhadtehtabState extends State<Ahadtehtab> {
       children: [
         Expanded(child: Image.asset("assets/images/hadith_header.png")),
         Divider(),
-        Text(AppLocalizations.of(context)!.ahadeth,
-        style: TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.w600,
-        ),
-        ),
+        Text(AppLocalizations.of(context)!.ahadeth, style: Theme.of(context).textTheme.titleMedium,),
         Divider(),
         Expanded(
           flex: 2,
           child: ListView.separated(
-              itemBuilder: (context, index) => Text(ahadithList[index].title,
-                textAlign: TextAlign.center ,
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400
+              itemBuilder: (context, index) => InkWell(
+                onTap: (){
+                  Navigator.of(context).pushNamed(AhadethDetailsScreen.routeName, arguments: ahadithList[index]);
+                },
+                child: Text(ahadithList[index].title,
+                  textAlign: TextAlign.center ,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               separatorBuilder: (context, index) => SizedBox(height: 10,),
