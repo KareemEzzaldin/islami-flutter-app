@@ -28,4 +28,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get radio => 'اذاعة';
+
+  @override
+  String get number_of_tasbeh => 'عدد التسبيح';
+
+  @override
+  String get language => 'اللغة';
+
+  @override
+  String get theme => 'الواجهة';
+
+  @override
+  String get dark => 'مظلم';
+
+  @override
+  String get light => 'مضيئ';
 }

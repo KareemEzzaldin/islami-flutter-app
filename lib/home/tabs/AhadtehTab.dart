@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:islami_ap/home/Hadith.dart';
 import 'package:islami_ap/l10n/app_localizations.dart';
 
+import '../../ahadeth_details/AhadethDetailsScreen.dart';
+
 class Ahadtehtab extends StatefulWidget {
 
   @override

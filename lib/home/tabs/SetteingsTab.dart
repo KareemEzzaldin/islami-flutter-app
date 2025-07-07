@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_ap/home/LanguageBottomSheet.dart';
 import 'package:islami_ap/home/ThemeBottomSheet.dart';
+import 'package:islami_ap/l10n/app_localizations.dart';
 
 class Setteingstab extends StatelessWidget {
   const Setteingstab({super.key});
@@ -13,7 +14,7 @@ class Setteingstab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 30,),
-          Text("Language", style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.language, style: Theme.of(context).textTheme.titleMedium),
           SizedBox(height: 10,),
           GestureDetector(
             onTap: () {
@@ -37,7 +38,7 @@ class Setteingstab extends StatelessWidget {
             ),
           ),
           SizedBox(height: 50,),
-          Text("Theme", style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.theme, style: Theme.of(context).textTheme.titleMedium),
           SizedBox(height: 10,),
           GestureDetector(
             onTap: () {

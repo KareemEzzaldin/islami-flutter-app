@@ -5,5 +5,10 @@
   "quran" : "قرأن",
   "ahadeth": "احاديث",
   "sebha": "سبحة",
-  "radio": "اذاعة"
+  "radio": "اذاعة",
+  "number_of_tasbeh": "عدد التسبيح",
+  "language": "اللغة",
+  "theme": "الواجهة",
+  "dark": "مظلم",
+  "light": "مضيئ"
 }
