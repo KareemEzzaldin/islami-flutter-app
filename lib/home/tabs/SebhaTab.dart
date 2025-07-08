@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_ap/l10n/app_localizations.dart';
 
 class Sebhatab extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _SebhatabState extends State<Sebhatab> {
             ),
           ),
           SizedBox(height: 30),
-          Text("Number of Tasbeh", style: Theme.of(context).textTheme.titleMedium,),
+          Text(AppLocalizations.of(context)!.number_of_tasbeh, style: Theme.of(context).textTheme.titleMedium,),
           SizedBox(height: 30,),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 30,vertical: 30),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_ap/ahadeth_details/AhadethDetailsScreen.dart';
 import 'package:islami_ap/home/Hadith.dart';
+import 'package:islami_ap/l10n/app_localizations.dart';
+
+import '../../ahadeth_details/AhadethDetailsScreen.dart';
 
 class Ahadtehtab extends StatefulWidget {
 
@@ -23,9 +25,7 @@ class _AhadtehtabState extends State<Ahadtehtab> {
       children: [
         Expanded(child: Image.asset("assets/images/hadith_header.png")),
         Divider(),
-        Text("Ahadeth",
-        style: Theme.of(context).textTheme.titleMedium,
-        ),
+        Text(AppLocalizations.of(context)!.ahadeth, style: Theme.of(context).textTheme.titleMedium,),
         Divider(),
         Expanded(
           flex: 2,
